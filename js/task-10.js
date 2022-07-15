@@ -18,31 +18,28 @@ const boxesEl = document.querySelector('#boxes');
 // inputEl.addEventListener('input', handleEnterElementInput);
 
 
-// btnCreateEl.addEventListener('click', createBoxes(inputEl.value));
+btnCreateEl.addEventListener('click', createBoxes);
+btnDestroyEl.addEventListener('click', handleCleanDiv);
 
-// function handleEnterElementInput(){
-//   const am = inputEl.value;
-//   console.log(am);
-//   return am;
-// }
-
-
-
-
-const createBoxes = (amount) => {
-  const box = document.createElement('div');
-  console.log(box);
-  box.style.width = `${40}px`;
-  box.style.height = `${40}px`;
-  box.style.backgroundColor = getRandomHexColor();
-  
-  
-  boxesEl.appendChild(box);
-
-  return box;
+function handleCleanDiv () {
+  boxesEl.innerHTML = "";
 }
 
-console.log(createBoxes(3))
+
+
+function createBoxes(amount) {
+  for (let i = 0; i < amount; i += 1) {
+    const box = document.createElement('div');
+    console.log(box);
+    box.style.width = `${30 + i*10}px`;
+    box.style.height = `${30 + i*10}px`;
+    box.style.backgroundColor = getRandomHexColor();
+    boxesEl.appendChild(box);
+  }
+  
+}
+
+console.log(createBoxes(5))
 
 
 
