@@ -21,3 +21,10 @@ const creatingImg = images.map(img => `<li>
 
 ulEL.insertAdjacentHTML("afterbegin", creatingImg);
 
+const galIm = galaryArray => {
+  return images.map(image => {
+    const liEl = document.createElement('li');
+    const imageEl = liEl.createElement('img')
+  })
+}
+
